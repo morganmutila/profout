@@ -14,5 +14,8 @@ class SiteSetting extends Model
         'hero_description',
         'about_info',
         'address',
+        'contact_form_email',
+        'map_location',
+        'company_profile_link',
     ];
 }

@@ -15,11 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('phone')->nullable();
             $table->string('phone_alt')->nullable();
+            $table->string('map_location')->nullable(); // Google Maps link/embed
             $table->string('email')->nullable();
+            $table->string('contact_email')->nullable();
             $table->string('hero_title')->nullable();
             $table->text('hero_description')->nullable();
             $table->text('about_info')->nullable();
             $table->string('address')->nullable();
+            $table->string('company_profile_link')->nullable();
             $table->timestamps();
         });
     }

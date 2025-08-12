@@ -3,14 +3,18 @@
 namespace App\Filament\Resources\SiteSettingResource\Pages;
 
 use App\Filament\Resources\SiteSettingResource;
+use App\Models\SiteSetting;
 use Filament\Resources\Pages\EditRecord;
 
 class EditSiteSetting extends EditRecord
 {
     protected static string $resource = SiteSettingResource::class;
 
-    protected function getRedirectUrl(): string
+    public function mount($record = null): void
     {
-        return $this->getResource()::getUrl('edit');
+        $siteSetting = SiteSetting::firstOrCreate([]);
+        $this->record = $siteSetting->getKey();
+
+        parent::mount($this->record);
     }
 }
