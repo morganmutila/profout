@@ -1,23 +1,17 @@
-<?php 
+<?php
 
 namespace App\Filament\Resources\Projects;
 
-use App\Filament\Resources\ProjectResource\Pages\ListProjects;
-use App\Filament\Resources\ProjectResource\Pages\CreateProject;
-use App\Filament\Resources\ProjectResource\Pages\EditProject;
-use UnitEnum;
-use BackedEnum;
+use App\Filament\Resources\Projects\Pages\CreateProject;
+use App\Filament\Resources\Projects\Pages\EditProject;
+use App\Filament\Resources\Projects\Pages\ListProjects;
+use App\Filament\Resources\Projects\Schemas\ProjectForm;
+use App\Filament\Resources\Projects\Tables\ProjectsTable;
 use App\Models\Project;
-use Filament\Tables\Table;
-use Filament\Schemas\Schema;
+use BackedEnum;
 use Filament\Resources\Resource;
-use Filament\Forms\Components\Select;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\RichEditor;
-use App\Filament\Resources\ProjectResource\Pages;
+use Filament\Schemas\Schema;
+use Filament\Tables\Table;
 
 class ProjectResource extends Resource
 {
@@ -26,43 +20,23 @@ class ProjectResource extends Resource
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-folder-open';
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 
+    protected static ?string $recordTitleAttribute = 'Project';
+
     public static function form(Schema $schema): Schema
     {
-        return $schema->components([
-            TextInput::make('title')->required()->maxLength(255),
-            TextInput::make('category')->maxLength(255),
-            RichEditor::make('description')->toolbarButtons([
-                'bold', 'italic', 'strike', 'link', 'bulletList', 'orderedList', 'undo', 'redo'
-            ]),
-            DatePicker::make('start_date')->label('Start Date'),
-            DatePicker::make('end_date')->label('End Date'),
-            FileUpload::make('featured_image')->image()->directory('projects/featured')->maxSize(2048),
-            FileUpload::make('gallery')->multiple()->image()->directory('projects/gallery')->maxSize(2048),
-            Select::make('status')
-                ->options([
-                    'Ongoing' => 'Ongoing',
-                    'Completed' => 'Completed',
-                ])
-                ->default('Ongoing')
-                ->required(),
-        ]);
+        return ProjectForm::configure($schema);
     }
 
-public static function table(Table $table): Table
+    public static function table(Table $table): Table
     {
-        return $table->columns([
-            TextColumn::make('title')->limit(30)->sortable()->searchable(),
-            TextColumn::make('category')->limit(20)->sortable()->searchable(),
-            TextColumn::make('status')
-                ->badge()
-                ->color(fn (string $state): string => match ($state) {
-                    'Ongoing' => 'gray',
-                    'Completed' => 'success',
-                }),
-            TextColumn::make('start_date')->date()->sortable(),
-            TextColumn::make('end_date')->date()->sortable(),
-            TextColumn::make('created_at')->dateTime(),
-        ])->defaultSort('start_date', 'desc');
+        return ProjectsTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array

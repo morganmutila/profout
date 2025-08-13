@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources\Services\Pages;
 
-use Filament\Actions\DeleteAction;
 use App\Filament\Resources\Services\ServiceResource;
-use Filament\Actions;
+use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
 class EditService extends EditRecord

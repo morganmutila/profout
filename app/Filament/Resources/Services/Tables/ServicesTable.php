@@ -1,23 +1,30 @@
 <?php
 
-namespace App\Filament\Resources\Clients\Tables;
+namespace App\Filament\Resources\Services\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ClientsTable
+class ServicesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('logo')
+                TextColumn::make('short_description')
                     ->searchable(),
+                TextColumn::make('icon')
+                    ->searchable(),
+                ImageColumn::make('image'),
+                TextColumn::make('order')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

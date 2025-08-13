@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Clients\Tables;
+namespace App\Filament\Resources\Certifications\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,7 +8,7 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ClientsTable
+class CertificationsTable
 {
     public static function configure(Table $table): Table
     {
@@ -16,7 +16,12 @@ class ClientsTable
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('logo')
+                TextColumn::make('issuer')
+                    ->searchable(),
+                TextColumn::make('issued_at')
+                    ->date()
+                    ->sortable(),
+                TextColumn::make('certificate_file')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Clients\Tables;
+namespace App\Filament\Resources\SiteSettings\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,15 +8,28 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ClientsTable
+class SiteSettingsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('phone')
                     ->searchable(),
-                TextColumn::make('logo')
+                TextColumn::make('phone_alt')
+                    ->searchable(),
+                TextColumn::make('map_location')
+                    ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email address')
+                    ->searchable(),
+                TextColumn::make('contact_email')
+                    ->searchable(),
+                TextColumn::make('hero_title')
+                    ->searchable(),
+                TextColumn::make('address')
+                    ->searchable(),
+                TextColumn::make('company_profile_link')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
