@@ -1,10 +1,14 @@
+<!-- Include the header CSS file in your head section -->
+@push('styles')
+    <link href="{{ asset('assets/css/header.css') }}" rel="stylesheet">
+@endpush
+
 <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="{{ route('home') }}" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="{{ asset('assets/img/logo.png') }}" alt=""> -->
-            <h1 class="sitename">Profout</h1> <span>.</span>
+            <img src="{{ asset('assets/img/logos/logo-light.png') }}" alt="Profout." class="logo-light">
+            <img src="{{ asset('assets/img/logos/logo-dark.png') }}" alt="Profout." class="logo-dark">
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -18,16 +22,6 @@
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="#">Dropdown 1</a></li>
-                        <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Deep Dropdown 1</a></li>
-                                <li><a href="#">Deep Dropdown 2</a></li>
-                                <li><a href="#">Deep Dropdown 3</a></li>
-                                <li><a href="#">Deep Dropdown 4</a></li>
-                                <li><a href="#">Deep Dropdown 5</a></li>
-                            </ul>
-                        </li>
                         <li><a href="#">Dropdown 2</a></li>
                         <li><a href="#">Dropdown 3</a></li>
                         <li><a href="#">Dropdown 4</a></li>
@@ -40,3 +34,8 @@
 
     </div>
 </header>
+
+<!-- Include the header JavaScript file before closing body tag -->
+@push('scripts')
+    <script src="{{ asset('assets/js/header.js') }}"></script>
+@endpush

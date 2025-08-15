@@ -12,8 +12,6 @@ class AppLayout extends Component
      */
 
     public $title;
-    public $customcss;
-    public $customjs;
 
     public function __construct($title="Professional Outcomes Ltd ™")
     {

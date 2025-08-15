@@ -1,5 +1,9 @@
 <x-app-layout title=" - Home">
 
+    @push('styles')
+        <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
+    @endpush
+
     <main class="main">
 
         <!-- Hero Section -->
@@ -964,5 +968,10 @@
         </section><!-- /Recent Blog Posts Section -->
 
     </main>
+
+
+    @push('scripts')
+        <script src="{{ asset('assets/js/header.js') }}"></script>
+    @endpush
 
 </x-app-layout>

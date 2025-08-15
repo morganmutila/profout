@@ -36,7 +36,7 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-    {{ $customcss }}
+    @stack('styles')
 
 </head>
 
@@ -66,7 +66,7 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
-    {{ $customjs }}
+    @stack('scripts')
 
 </body>
 
