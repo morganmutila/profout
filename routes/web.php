@@ -6,7 +6,8 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProjectController;
 
 
-Route::get('/', [HomeController::class])->name('home');
+// Home
+Route::get('/', [HomeController::class, '__invoke'])->name('home');
 
 
 Route::get('/team', function () {

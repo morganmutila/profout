@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\Certifications\Schemas;
 
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\FileUpload;
 
 class CertificationForm
 {
@@ -14,12 +15,13 @@ class CertificationForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                ->required(),
+                FileUpload::make('certificate_file')
+                    ->image()->required(),
                 TextInput::make('issuer'),
-                DatePicker::make('issued_at'),
-                Textarea::make('description')
-                    ->columnSpanFull(),
-                TextInput::make('certificate_file'),
+                DatePicker::make('issued_at'),                
+                    Textarea::make('description')
+                    ->columnSpan('full'),
             ]);
     }
 }

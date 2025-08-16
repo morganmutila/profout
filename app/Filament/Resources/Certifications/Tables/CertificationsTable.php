@@ -14,6 +14,12 @@ class CertificationsTable
     {
         return $table
             ->columns([
+                // Display image column
+                \Filament\Tables\Columns\ImageColumn::make('certificate_file')
+                    ->label('Image')
+                    ->circular()
+                    ->height(40)
+                    ->width(40),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('issuer')
@@ -21,19 +27,10 @@ class CertificationsTable
                 TextColumn::make('issued_at')
                     ->date()
                     ->sortable(),
-                TextColumn::make('certificate_file')
-                    ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),
