@@ -1,4 +1,4 @@
-<x-app-layout title="About">
+<x-app-layout title="Contact Us">
 
     @push('styles')
         <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
@@ -6,7 +6,7 @@
 
     <main class="main">
 
-        <x-page-title title="About">
+        <x-page-title title="Contact US">
             Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda
             numquam molestias.
         </x-page-title>

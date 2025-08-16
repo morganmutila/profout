@@ -389,21 +389,22 @@
                         class="{{ request()->routeIs('projects') || request()->routeIs('projects.show') ? 'active' : '' }}">Projects</a>
                 </li>
 
-                <li><a href="{{ route('why-profout') }}"
-                        class="{{ request()->routeIs('why-profout') ? 'active' : '' }}">Why Profout</a></li>
+                <li><a href="{{ route('clients') }}"
+                        class="{{ request()->routeIs('clients') ? 'active' : '' }}">Clients</a></li>
+
+                <li><a href="{{ route('certifications') }}"
+                        class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a></li>
+
+
                 <li class="dropdown"><a
-                        class="{{ request()->routeIs(['about', 'certifications', 'team', 'clients', 'contact']) ? 'active' : '' }}"><span>Company</span>
+                        class="{{ request()->routeIs(['about', 'team', 'contact']) ? 'active' : '' }}"><span>Company</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('about') }}"
                                 class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
-                        <li><a href="{{ route('certifications') }}"
-                                class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a>
-                        </li>
+
                         <li><a href="{{ route('team') }}"
                                 class="{{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a></li>
-                        <li><a href="{{ route('clients') }}"
-                                class="{{ request()->routeIs('clients') ? 'active' : '' }}">Our Clients</a></li>
                         <li><a href="{{ route('contact') }}"
                                 class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
                     </ul>

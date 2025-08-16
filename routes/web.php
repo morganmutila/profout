@@ -21,6 +21,10 @@ Route::get('/certifications', function () {
     return view('certifications');
 })->name('certifications');
 
+Route::get('/partners', function () {
+    return view('partners');
+})->name('partners');
+
 Route::get('/clients', function () {
     return view('clients');
 })->name('clients');
