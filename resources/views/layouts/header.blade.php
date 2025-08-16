@@ -14,20 +14,19 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="{{ route('home') }}" class="active">Home</a></li>
-                <li><a href="{{ route('about') }}">About</a></li>
                 <li><a href="{{ route('services') }}">Services</a></li>
                 <li><a href="{{ route('projects') }}">Projects</a></li>
-                <li><a href="{{ route('blog') }}">Blog</a></li>
-                <li class="dropdown"><a href="#"><span>Dropdown</span> <i
+                <li class="dropdown"><a href="#"><span>Company</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="#">Dropdown 1</a></li>
-                        <li><a href="#">Dropdown 2</a></li>
-                        <li><a href="#">Dropdown 3</a></li>
-                        <li><a href="#">Dropdown 4</a></li>
+                        <li><a href="{{ route('about') }}">About Profout</a></li>
+                        <li><a href="{{ route('why-profout') }}">Why Profout?</a></li>
+                        <li><a href="{{ route('certifications') }}">Certifications</a></li>
+                        <li><a href="{{ route('team') }}">Our Team</a></li>
+                        <li><a href="{{ route('clients') }}">Our Clients</a></li>
+                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

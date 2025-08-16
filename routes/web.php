@@ -7,22 +7,85 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/about', function () {
-    return view('home');
-})->name('about');
+Route::get('/team', function () {
+    return view('team');
+})->name('team');
 
-Route::get('/services', function () {
-    return view('home');
-})->name('services');
+Route::get('/why-profout', function () {
+    return view('why-profout');
+})->name('why-profout');
 
-Route::get('/projects', function () {
-    return view('home');
-})->name('projects');
+Route::get('/certifications', function () {
+    return view('certifications');
+})->name('certifications');
 
-Route::get('/blog', function () {
-    return view('home');
-})->name('blog');
+Route::get('/clients', function () {
+    return view('clients');
+})->name('clients');
 
-Route::get('/blog/{post}', function ($post) {
-    return view('home');
-})->name('blog.show');
+
+// About Company Routes
+Route::prefix('company')->group(function () {
+    Route::get('/about', function () {
+        return view('about');
+    })->name('about');
+
+    Route::get('/contact-us', function () {
+        return view('contact');
+    })->name('contact');
+
+    Route::get('/careers', function () {
+        return view('careers');
+    })->name('careers');
+});
+
+// Services Routes
+Route::prefix('services')->group(function () {
+    Route::get('/', function () {
+        return view('services.index');
+    })->name('services');
+
+    Route::get('/communication', function () {
+        return view('services.communication');
+    })->name('services.communication');
+
+    Route::get('/energy', function () {
+        return view('services.energy');
+    })->name('services.energy');
+
+    Route::get('/security', function () {
+        return view('services.security');
+    })->name('services.security');
+});
+
+use App\Http\Controllers\ProjectController;
+
+// Project Routes
+Route::controller(ProjectController::class)->group(function () {
+    Route::get('/projects', 'index')->name('projects');
+    Route::get('/projects/{project}', 'show')->name('projects.show');
+});
+
+// Legal Routes
+Route::prefix('legal')->group(function () {
+    Route::get('/terms-and-conditions', function () {
+        return view('legal.terms');
+    })->name('legal.terms');
+
+    Route::get('/privacy-policy', function () {
+        return view('legal.privacy');
+    })->name('legal.privacy');
+});
+
+// Download Company Profile Link
+Route::get('resources/downloads/company-profile', function(){
+    $path =  public_path(). "/mediadownload/profile.pdf";
+    return response()->download($path, date('Y') . ' - Professional Outcomes Limited Company Profile ' . '.pdf', ['Content-Type' => 'application/pdf',]);
+})->name('download-company-profile');
+
+
+// Blog Links
+Route::controller(PostController::class)->group(function () {
+    Route::get('/blog', 'index')->name('blog.index');
+    Route::get('/blog/{post}', 'show')->name('blog.show');
+});
