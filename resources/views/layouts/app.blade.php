@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Professional Outcomes {{ $title }}</title>
+    <title>{{ isset($title) ? $title . ' | Professional Outcomes' : 'Professional Outcomes' }}</title>
     <meta content="author" name="Mostek Technologies">
     <meta name="description" content="Professional Outcomes Limited">
     <meta name="keywords" content="LAN, Networks, Power Backup, Inverter">
@@ -45,6 +45,7 @@
     <!-- ======= Header ======= -->
     @include('layouts.header')
     <!-- End Header -->
+
 
     {{ $slot }}
 

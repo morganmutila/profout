@@ -13,9 +13,10 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="{{ route('home') }}" class="active">Home</a></li>
+                <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">Home</a></li>
                 <!-- Megamenu 2 -->
-                <li class="megamenu-2"><a href="#"><span>Services</span> <i
+                <li class="megamenu-2"><a href="#"
+                        class="{{ request()->routeIs('services.*') ? 'active' : '' }}"><span>Services</span> <i
                             class="bi bi-chevron-down toggle-dropdown"></i></a>
 
                     <!-- Mobile Megamenu -->
@@ -384,18 +385,27 @@
 
                 </li><!-- End Megamenu 2 -->
 
-                <li><a href="{{ route('projects') }}">Projects</a></li>
+                <li><a href="{{ route('projects') }}"
+                        class="{{ request()->routeIs('projects') || request()->routeIs('projects.show') ? 'active' : '' }}">Projects</a>
+                </li>
 
-
-                <li><a href="{{ route('why-profout') }}">Why Profout</a></li>
-                <li class="dropdown"><a href="#"><span>Company</span> <i
-                            class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <li><a href="{{ route('why-profout') }}"
+                        class="{{ request()->routeIs('why-profout') ? 'active' : '' }}">Why Profout</a></li>
+                <li class="dropdown"><a
+                        class="{{ request()->routeIs(['about', 'certifications', 'team', 'clients', 'contact']) ? 'active' : '' }}"><span>Company</span>
+                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
-                        <li><a href="{{ route('about') }}">About Profout</a></li>
-                        <li><a href="{{ route('certifications') }}">Certifications</a></li>
-                        <li><a href="{{ route('team') }}">Our Team</a></li>
-                        <li><a href="{{ route('clients') }}">Our Clients</a></li>
-                        <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                        <li><a href="{{ route('about') }}"
+                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
+                        <li><a href="{{ route('certifications') }}"
+                                class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a>
+                        </li>
+                        <li><a href="{{ route('team') }}"
+                                class="{{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a></li>
+                        <li><a href="{{ route('clients') }}"
+                                class="{{ request()->routeIs('clients') ? 'active' : '' }}">Our Clients</a></li>
+                        <li><a href="{{ route('contact') }}"
+                                class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,10 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProjectController;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+
+Route::get('/', [HomeController::class])->name('home');
 
 
 Route::get('/team', function () {
@@ -25,18 +27,10 @@ Route::get('/clients', function () {
 
 
 // About Company Routes
-Route::prefix('company')->group(function () {
-    Route::get('/about', function () {
-        return view('about');
-    })->name('about');
-
-    Route::get('/contact-us', function () {
-        return view('contact');
-    })->name('contact');
-
-    Route::get('/careers', function () {
-        return view('careers');
-    })->name('careers');
+Route::controller(PageController::class)->group(function () {
+    Route::get('/about-us', 'about')->name('about');
+    Route::get('/contact-us', 'contact')->name('contact');
+    Route::get('/careers', 'careers')->name('careers');
 });
 
 // Services Routes
@@ -57,8 +51,6 @@ Route::prefix('services')->group(function () {
         return view('services.security');
     })->name('services.security');
 });
-
-use App\Http\Controllers\ProjectController;
 
 // Project Routes
 Route::controller(ProjectController::class)->group(function () {

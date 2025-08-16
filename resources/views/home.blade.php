@@ -1,4 +1,4 @@
-<x-app-layout title=" - Home">
+<x-app-layout title="Home">
 
     @push('styles')
         <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
