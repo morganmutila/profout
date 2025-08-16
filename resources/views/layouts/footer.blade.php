@@ -9,7 +9,8 @@
                         <img src="{{ asset('assets/img/logos/logo-light-full.png') }}" alt="Profout."
                             class="logo-light w-100">
                     </a>
-                    <p class="tagline">Innovating the digital landscape with elegant solutions and timeless design.</p>
+                    <p class="tagline">Professional Outcomes Ltd is a company specialized in Information and
+                        Communication Technology Infrastructure building and Equipment supply.</p>
                     <p class="fs-4 lh-lg text-accent my-4">Ready to talk? contact us at any time.<br>+26 0972532611</p>
 
                     <div class="social-links mt-4">
@@ -22,18 +23,7 @@
             <div class="col-lg-6 offset-md-1">
                 <div class="footer-links-grid">
                     <div class="row">
-                        <div class="col-6 col-md-4">
-                            <h5>Company</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="{{ route('about') }}">About Profout</a></li>
-                                <li><a href="{{ route('team') }}">Our Team</a></li>
-                                <li><a href="{{ route('why-profout') }}">Why Profout?</a></li>
-                                <li><a href="{{ route('certifications') }}">Certifications</a></li>
-                                <li><a href="{{ route('clients') }}">Our Clients</a></li>
-                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
-                                <li><a href="{{ route('careers') }}">Careers</a></li>
-                            </ul>
-                        </div>
+
                         <div class="col-6 col-md-4">
                             <h5>Services</h5>
                             <ul class="list-unstyled">
@@ -50,6 +40,19 @@
                                 <li><a href="{{ route('legal.terms') }}">Terms of Service</a></li>
                             </ul>
                         </div>
+
+                        <div class="col-6 col-md-4">
+                            <h5>Company</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="{{ route('about') }}">About Profout</a></li>
+                                <li><a href="{{ route('team') }}">Our Team</a></li>
+                                <li><a href="{{ route('why-profout') }}">Why Profout?</a></li>
+                                <li><a href="{{ route('certifications') }}">Certifications</a></li>
+                                <li><a href="{{ route('clients') }}">Our Clients</a></li>
+                                <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                                <li><a href="{{ route('careers') }}">Careers</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -63,7 +66,7 @@
                 <div class="col-12">
                     <div class="footer-bottom-content">
                         <p>©&nbsp;{{ date('Y') }}&nbsp;Copyright Professional Outcomes
-                            Limited <span>All Rights
+                            Limited <span>. All Rights
                                 Reserved</span></p>
                     </div>
                 </div>
