@@ -6,7 +6,8 @@
             <div class="col-lg-5">
                 <div class="footer-brand">
                     <a href="index.html" class="logo d-flex align-items-center mb-3">
-                        <img src="{{ asset('assets/img/logos/logo-light.png') }}" alt="Profout." class="logo-light w-100">
+                        <img src="{{ asset('assets/img/logos/logo-light-full.png') }}" alt="Profout."
+                            class="logo-light w-100">
                     </a>
                     <p class="tagline">Innovating the digital landscape with elegant solutions and timeless design.</p>
                     <p class="fs-4 lh-lg text-accent my-4">Ready to talk? contact us at any time.<br>+26 0972532611</p>
@@ -15,8 +16,6 @@
                         <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
                         <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" aria-label="Dribbble"><i class="bi bi-dribbble"></i></a>
                     </div>
                 </div>
             </div>

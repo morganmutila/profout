@@ -7,8 +7,8 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="{{ route('home') }}" class="logo d-flex align-items-center">
-            <img src="{{ asset('assets/img/logos/logo-light.png') }}" alt="Profout." class="logo-light">
-            <img src="{{ asset('assets/img/logos/logo-dark.png') }}" alt="Profout." class="logo-dark">
+            <img src="{{ asset('assets/img/logos/logo-light-alt.png') }}" alt="Profout." class="logo-light">
+            <img src="{{ asset('assets/img/logos/logo-dark-alt.png') }}" alt="Profout." class="logo-dark">
         </a>
 
         <nav id="navmenu" class="navmenu">
