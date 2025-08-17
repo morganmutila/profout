@@ -19,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Enable strict mode for Eloquent models
+        \Illuminate\Database\Eloquent\Model::shouldBeStrict();
     }
 }

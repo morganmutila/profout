@@ -1,14 +1,15 @@
 <x-app-layout title="Our Projects">
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Our Projects</h1>
-                <p class="lead">Discover our innovative solutions and successful implementations across various
-                    sectors.
-                </p>
-            </div>
-        </div>
+    <main class="main">
+        @push('styles')
+            <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
+        @endpush
+
+
+        <x-page-title title="Our Projects" link-name="Projects">
+            Discover our innovative solutions and successful implementations across various
+            sectors.
+        </x-page-title>
 
         <div class="row mt-5 g-4">
             @foreach ($projects as $project)
@@ -30,5 +31,11 @@
                 </div>
             @endforeach
         </div>
-    </div>
+
+    </main>
+
+    @push('scripts')
+        <script src="{{ asset('assets/js/header.js') }}"></script>
+    @endpush
+
 </x-app-layout>

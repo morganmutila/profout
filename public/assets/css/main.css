@@ -1294,7 +1294,7 @@ h6 {
     background-position: center;
     background-repeat: no-repeat;
     padding: 160px 0 60px 0;
-    text-align: center;
+    text-align: left;
     position: relative;
 }
 
@@ -1310,16 +1310,20 @@ h6 {
 }
 
 .page-title h1 {
-    font-size: 56px;
+    font-size: 60px;
     font-weight: 500;
     margin-bottom: 10px;
+}
+
+.page-title p {
+    font-size: 24px;
 }
 
 .page-title .breadcrumbs ol {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    justify-content: center;
+    justify-content: start;
     padding: 0;
     margin: 0;
     font-size: 16px;

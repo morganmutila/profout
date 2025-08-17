@@ -18,9 +18,7 @@ Route::get('/why-profout', function () {
     return view('why-profout');
 })->name('why-profout');
 
-Route::get('/certifications', function () {
-    return view('certifications');
-})->name('certifications');
+Route::get('/certifications', [PageController::class, 'certifications'])->name('certifications');
 
 Route::get('/partners', function () {
     return view('partners');
@@ -42,7 +40,7 @@ Route::controller(PageController::class)->group(function () {
 Route::prefix('services')->group(function () {
     Route::get('/', function () {
         return view('services.index');
-    })->name('services');
+    })->name('services.index');
 
     Route::get('/communication', function () {
         return view('services.communication');

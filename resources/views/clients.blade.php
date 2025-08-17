@@ -6,7 +6,7 @@
 
     <main class="main">
 
-        <x-page-title title="Our Clients">
+        <x-page-title title="Our Clients" link-name="Clients">
             A Snapshot Sample of Our Clients
         </x-page-title>
 

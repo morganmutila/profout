@@ -7,7 +7,7 @@
         <nav class="breadcrumbs">
             <ol>
                 <li><a href="index.html">Home</a></li>
-                <li class="current">{{ $title }}</li>
+                <li class="current">{{ isset($linkName) ? $linkName : $title }}</li>
             </ol>
         </nav>
     </div>

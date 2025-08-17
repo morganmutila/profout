@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Models\Certification;
 
 class PageController extends Controller
 {
@@ -21,4 +22,10 @@ class PageController extends Controller
     {
         return view('careers');
     }   
+
+    public function certifications(): View
+    {
+        $certifications = Certification::all();
+        return view('certifications', compact('certifications'));
+    }
 }
