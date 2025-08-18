@@ -25,8 +25,7 @@
                                     <img src="{{ asset('storage/' . $certificate->certificate_file) }}"
                                         class="img-fluid" alt="{{ $certificate->name }}"
                                         style="height: 240px;object-fit:contain">
-                                    <div class="portfolio-info justify-items-center align-items-center">
-                                        <p>{{ $certificate->name }}</p>
+                                    <div class="portfolio-info">
                                         <a href="{{ asset('storage/' . $certificate->certificate_file) }}"
                                             data-gallery="portfolio-gallery-product" class="glightbox preview-link">
                                             <i class="bi bi-zoom-in"></i>

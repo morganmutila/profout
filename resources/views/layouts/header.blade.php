@@ -3,7 +3,8 @@
     <link href="{{ asset('assets/css/header.css') }}" rel="stylesheet">
 @endpush
 
-<header id="header" class="header d-flex align-items-center fixed-top">
+<header id="header"
+    class="header d-flex align-items-center fixed-top {{ !request()->routeIs('home') ? 'page' : '' }}">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
         <a href="{{ route('home') }}" class="logo d-flex align-items-center">

@@ -39,8 +39,9 @@ class ProjectForm
                     ->required()
                     ->options([
                         'Communication' => 'Communication',
-                        'Energy'       => 'Energy',
+                        'Energy'       => 'Power and Energy',
                         'Security'     => 'Security Solutions',
+                        'Construction' => 'Construction',
                     ])
                     ->searchable(),
 
