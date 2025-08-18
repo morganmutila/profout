@@ -394,14 +394,13 @@
                         class="{{ request()->routeIs('clients') ? 'active' : '' }}">Clients</a></li>
 
                 <li class="dropdown"><a
-                        class="{{ request()->routeIs(['about', 'team', 'contact', 'certifications']) ? 'active' : '' }}"><span>Company</span>
+                        class="{{ request()->routeIs(['about', 'contact', 'certifications']) ? 'active' : '' }}"><span>Company</span>
                         <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="{{ route('about') }}"
                                 class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
 
-                        <li><a href="{{ route('team') }}"
-                                class="{{ request()->routeIs('team') ? 'active' : '' }}">Our Team</a></li>
+
                         <li><a href="{{ route('certifications') }}"
                                 class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a>
                         </li>

@@ -140,24 +140,6 @@
             </div>
         </section>
 
-        <!-- Why Our Team -->
-        <section class="bg-dark text-white py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Why Our Team Stands Out</h2>
-                <ul class="list-unstyled">
-                    <li>✅ Certified professionals with proven skills and expertise</li>
-                    <li>✅ Commitment to delivering <strong>quality products & services</strong></li>
-                    <li>✅ A culture of <strong>diversity, innovation, and responsibility</strong></li>
-                    <li>✅ Dedicated support staff for excellent client experience</li>
-                </ul>
-                <p class="mt-4">
-                    At <strong>Profout</strong>, our people aren’t just employees — they are innovators, problem
-                    solvers,
-                    and trusted partners to our clients.
-                </p>
-            </div>
-        </section>
-
     </main>
 
 

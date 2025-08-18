@@ -53,6 +53,10 @@ Route::prefix('services')->group(function () {
     Route::get('/security', function () {
         return view('services.security');
     })->name('services.security');
+
+    Route::get('/construction', function () {
+        return view('services.construction');
+    })->name('services.construction');
 });
 
 // Project Routes

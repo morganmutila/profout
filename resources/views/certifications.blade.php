@@ -15,20 +15,22 @@
 
             <div class="container">
 
-                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <div class="isotope-layout" data-layout="masonry" data-sort="original-order">
 
                     <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
                         @foreach ($certifications as $certificate)
-                            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-construction">
-                                <div class="portfolio-content h-100">
+                            <div class="col-lg-2 col-md-3 portfolio-item isotope-item filter-construction">
+                                <div class="portfolio-content h-100 border">
                                     <img src="{{ asset('storage/' . $certificate->certificate_file) }}"
-                                        class="img-fluid" alt="{{ $certificate->name }}">
-                                    <div class="portfolio-info">
+                                        class="img-fluid" alt="{{ $certificate->name }}"
+                                        style="height: 240px;object-fit:contain">
+                                    <div class="portfolio-info justify-items-center align-items-center">
                                         <p>{{ $certificate->name }}</p>
                                         <a href="{{ asset('storage/' . $certificate->certificate_file) }}"
-                                            data-gallery="portfolio-gallery-product"
-                                            class="glightbox preview-link">View</a>
+                                            data-gallery="portfolio-gallery-product" class="glightbox preview-link">
+                                            <i class="bi bi-zoom-in"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div><!-- End Portfolio Item -->
