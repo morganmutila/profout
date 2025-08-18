@@ -15,4 +15,5 @@ class Certification extends Model
     ];
 
     protected $dates = ['issued_at'];
+
 }

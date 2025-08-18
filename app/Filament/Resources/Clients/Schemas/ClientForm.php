@@ -15,8 +15,9 @@ class ClientForm
                 TextInput::make('name')
                     ->required(),
                 FileUpload::make('logo')
-                ->directory('clients')
-                    ->image(),
+                    ->directory('clients')
+                    ->image()
+                    ->disk('public'),
             ]);
     }
 }

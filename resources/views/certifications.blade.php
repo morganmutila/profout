@@ -7,8 +7,7 @@
     <main class="main">
 
         <x-page-title title="Certifications">
-            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda
-            numquam molestias.
+            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat numquam molestias.
         </x-page-title>
 
         <!-- Projects Section -->
@@ -26,31 +25,16 @@
                                     <img src="{{ asset('storage/' . $certificate->certificate_file) }}"
                                         class="img-fluid" alt="{{ $certificate->name }}">
                                     <div class="portfolio-info">
-                                        <h4>{{ $certificate->name }}</h4>
-                                        <p>{{ $certificate->description }}</p>
-                                        <a href="assets/img/projects/construction-1.jpg" title="Product 1"
-                                            data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                                                class="bi bi-zoom-in"></i></a>
-                                        <a href="project-details.html" title="More Details" class="details-link"><i
-                                                class="bi bi-link-45deg"></i></a>
+                                        <p>{{ $certificate->name }}</p>
+                                        <a href="{{ asset('storage/' . $certificate->certificate_file) }}"
+                                            data-gallery="portfolio-gallery-product"
+                                            class="glightbox preview-link">View</a>
                                     </div>
                                 </div>
                             </div><!-- End Portfolio Item -->
                         @endforeach
 
                     </div><!-- End Portfolio Container -->
-                    @foreach ($certifications as $certificate)
-                        <div class="col-lg-4 col-md-6">
-                            <div class="certification-card">
-                                <img src="{{ asset('storage/' . $certificate->certificate_file) }}" class="img-fluid"
-                                    alt="{{ $certificate->name }}">
-                                <h3>{{ $certificate->name }}</h3>
-                                <p>{{ $certificate->description }}</p>
-                                <a href="{{ route('certifications', $certificate->id) }}" class="btn btn-primary">View
-                                    Details</a>
-                            </div>
-                        </div>
-                    @endforeach
 
                 </div>
 

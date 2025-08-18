@@ -2,8 +2,6 @@
 
 namespace App\Filament\Resources\Projects\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -15,8 +13,10 @@ class ProjectsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('featured_image'),
                 TextColumn::make('title')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(25),
                 TextColumn::make('category')
                     ->searchable(),
                 TextColumn::make('start_date')
@@ -25,7 +25,6 @@ class ProjectsTable
                 TextColumn::make('end_date')
                     ->date()
                     ->sortable(),
-                ImageColumn::make('featured_image'),
                 TextColumn::make('status')
                     ->searchable(),
                 TextColumn::make('created_at')
@@ -37,10 +36,7 @@ class ProjectsTable
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
-            ->filters([
-                //
-            ])
-            ->recordActions([
+            ->actions([
                 EditAction::make(),
             ]);
     }

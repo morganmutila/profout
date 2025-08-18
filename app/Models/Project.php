@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\ProjectImage;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
@@ -13,13 +14,17 @@ class Project extends Model
         'start_date',
         'end_date',
         'featured_image',
-        'gallery',
+        'slug',
         'status',
     ];
 
     protected $casts = [
         'start_date' => 'date',
         'end_date' => 'date',
-        'gallery' => 'array',
     ];
+
+    public function images()
+    {
+        return $this->hasMany(ProjectImage::class);
+    }
 }

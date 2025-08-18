@@ -19,7 +19,8 @@ class CertificationsTable
                     ->label('Image')
                     ->circular()
                     ->height(40)
-                    ->width(40),
+                    ->width(40)
+                    ->disk('public'),
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('issuer')

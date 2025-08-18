@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('category')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->string('featured_image')->nullable();
-            $table->json('gallery')->nullable();
             $table->enum('status', ['Ongoing', 'Completed'])->default('Ongoing');
             $table->timestamps();
         });

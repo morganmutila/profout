@@ -20,7 +20,7 @@ class ProjectResource extends Resource
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-folder-open';
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 
-    protected static ?string $recordTitleAttribute = 'Project';
+    protected static ?string $recordTitleAttribute = 'project';
 
     public static function form(Schema $schema): Schema
     {

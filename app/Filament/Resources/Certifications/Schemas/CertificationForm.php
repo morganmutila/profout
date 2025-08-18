@@ -19,7 +19,8 @@ class CertificationForm
                 FileUpload::make('certificate_file')
                     ->directory('certifications')
                     ->image()
-                    ->required(),
+                    ->required()
+                    ->disk('public'),
                 TextInput::make('issuer'),
                 DatePicker::make('issued_at'),                
                     Textarea::make('description')
