@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources\Services\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\DeleteAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
@@ -39,6 +38,7 @@ class ServicesTable
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make(),
             ]);
     }
 }

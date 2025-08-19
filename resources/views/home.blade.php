@@ -7,7 +7,7 @@
     <main class="main">
 
         <!-- Hero Section -->
-        @include('partials.hero')
+        <livewire:slider />
         <!-- /Hero Section -->
 
         <!-- Get Started Section -->
