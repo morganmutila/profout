@@ -6,7 +6,7 @@
 
     <main class="main">
 
-        <x-page-title title="Contact US">
+        <x-page-title title="Contact Us">
             Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda
             numquam molestias.
         </x-page-title>

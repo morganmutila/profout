@@ -4,7 +4,7 @@
     <div class="container position-relative">
         <h1>{{ $title }}</h1>
         <p>{{ $slot }}</p>
-        <nav class="breadcrumbs">
+        <nav class="breadcrumbs d-none">
             <ol>
                 <li><a href="index.html">Home</a></li>
                 <li class="current">{{ isset($linkName) ? $linkName : $title }}</li>
@@ -12,3 +12,13 @@
         </nav>
     </div>
 </div><!-- End Page Title -->
+<div class="page-title page-breadcrumb">
+    <div class="container position-relative">
+        <nav class="breadcrumbs text-dark flex">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li class="current">{{ isset($linkName) ? $linkName : $title }}</li>
+            </ol>
+        </nav>
+    </div>
+</div>
