@@ -20,7 +20,7 @@ class CertificationResource extends Resource
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-document';
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 
-    protected static ?string $recordTitleAttribute = 'certification';
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Schema $schema): Schema
     {

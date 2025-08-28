@@ -5,10 +5,14 @@
         @foreach ($sliders as $slider)
             <div class="carousel-item @if ($loop->first) active @endif">
                 <img src="{{ asset('storage/' . $slider->image) }}" alt="{{ $slider->title }}">
-                <div class="carousel-container">
-                    <h2>{{ $slider->title }}</h2>
-                    <p>{{ $slider->description }}</p>
-                    <a href="#featured-services" class="btn-get-started">Get Started</a>
+                <div
+                    class="carousel-container {{ $slider->slider_type == 'left_aligned' ? 'align-items-start ms-md-5 ps-md-5 text-start' : 'text-center' }}">
+                    <h2 class="text-uppercase">{{ $slider->title }}</h2>
+                    @if ($slider->description)
+                        <div id="description"
+                            class="fw-light h5 d-flex {{ $slider->slider_type == 'left_aligned' ? ' align-items-start text-start' : 'align-items-center text-center' }}">
+                            {!! $slider->description !!}</div>
+                    @endif
                 </div>
             </div><!-- End Carousel Item -->
         @endforeach

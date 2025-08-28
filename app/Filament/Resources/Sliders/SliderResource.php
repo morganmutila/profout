@@ -21,7 +21,7 @@ class SliderResource extends Resource
     protected static string|BackedEnum|null $navigationIcon = Heroicon::CodeBracketSquare;
     protected static string | \UnitEnum | null $navigationGroup = 'Content';
 
-    protected static ?string $recordTitleAttribute = 'slider';
+    protected static ?string $recordTitleAttribute = 'title';
 
     public static function form(Schema $schema): Schema
     {

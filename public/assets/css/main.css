@@ -1413,7 +1413,7 @@ section,
 
 .hero .carousel {
     width: 100%;
-    min-height: 100vh;
+    min-height: 94vh;
     padding: 0;
     margin: 0;
     background-color: var(--background-color);
@@ -1487,7 +1487,7 @@ section,
 
 @media (min-width: 1024px) {
     .hero h2,
-    .hero p {
+    .hero #description {
         max-width: 60%;
     }
 }
