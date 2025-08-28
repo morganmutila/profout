@@ -10,7 +10,7 @@ class Slider extends Component
     public function render()
     {
         return view('livewire.slider', [
-            'sliders' => SliderModel::where('active', true)
+            'sliders' => SliderModel::where('is_active', true)
                 ->orderBy('order', 'asc')
                 ->get(),
         ]);

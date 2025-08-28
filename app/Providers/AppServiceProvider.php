@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
+use \Illuminate\Database\Eloquent\Model;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Enable strict mode for Eloquent models
-        \Illuminate\Database\Eloquent\Model::shouldBeStrict();
+        Model::shouldBeStrict(!app()->isProduction());
+        DB::prohibitDestructiveCommands(!app()->isProduction());
+        Model::unguard();
+
     }
 }
