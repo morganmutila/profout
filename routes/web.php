@@ -66,15 +66,8 @@ Route::controller(ProjectController::class)->group(function () {
 });
 
 // Legal Routes
-Route::prefix('legal')->group(function () {
-    Route::get('/terms-and-conditions', function () {
-        return view('legal.terms');
-    })->name('legal.terms');
-
-    Route::get('/privacy-policy', function () {
-        return view('legal.privacy');
-    })->name('legal.privacy');
-});
+Route::view('/terms-of-service', 'legal.terms')->name('legal.terms');
+Route::view('/privacy-policy', 'legal.privacy')->name('legal.privacy');
 
 // Download Company Profile Link
 Route::get('resources/downloads/company-profile', function(){

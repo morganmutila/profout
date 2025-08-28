@@ -11,49 +11,25 @@
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-                <div class="row align-items-center">
+                <div class="row align-items-start">
 
                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="200">
                         <div class="content">
                             <h2 class="section-heading mb-4">Our Journey</h2>
-                            <p class="lead-text mb-4">PROFESSIONAL OUTCOMES LTD simply PROFOUT was established in 2014
-                                in the great Northmead
-                                Suburbs of the Great City of Lusaka, Zambia. Our founders started as an electrical
-                                contracting company
-                                serving financial institutions through wiring and installing electrical equipment around
-                                the banks’
-                                branches. Later due to higher demands of ICT systems and applications across the
-                                country.
+                            <p class="lead-text mb-4">Professional Outcomes Ltd — simply PROFOUT — was founded in 2014
+                                in the vibrant Northmead suburb of Lusaka, Zambia.
                             </p>
-                            <p class="description-text mb-5">PROFOUT
-                                was able to evolve and invest more in IT markets to cover the huge gaps left in the IT
-                                industry by
-                                undertaking a number of ICT projects requested of us by our growing esteemed clients - a
-                                sign that these
-                                customers have been appreciating our products and would enable us to remain as a viable
-                                and strong
-                                going concern for the foreseeable future. For now the only constant about PROFOUT
-                                between inception
-                                and present day is to remain relevant and grow in the fast paced 21st century by
-                                ensuring that we are
-                                proactive in embracing latest technological tools and systems that will not only meet
-                                our customers but
-                                exceed their expectations.</p>
+                            <p class="description-text mb-5">We began as an electrical contracting company, serving
+                                financial institutions by wiring and installing equipment in bank branches. As the
+                                demand for ICT systems grew across the country, we evolved into the IT sector,
+                                delivering innovative solutions and bridging critical gaps in the industry.</p>
 
-                            <div class="stats-grid">
-                                <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="stat-number">11+</div>
-                                    <div class="stat-label">Years Experience</div>
-                                </div>
-                                <div class="stat-item" data-aos="fade-up" data-aos-delay="350">
-                                    <div class="stat-number">100+</div>
-                                    <div class="stat-label">Projects Completed</div>
-                                </div>
-                                <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="stat-number">98%</div>
-                                    <div class="stat-label">Client Satisfaction</div>
-                                </div>
-                            </div>
+
+                            <p class="description-text mb-5">Over the years, our commitment to excellence has earned us
+                                the trust of our clients, enabling steady growth and long-term sustainability. Today,
+                                our focus remains the same — to stay relevant in the fast-paced 21st century by
+                                proactively adopting the latest technologies, ensuring we consistently meet and exceed
+                                customer expectations.</p>
 
                         </div>
                     </div>
@@ -61,7 +37,7 @@
                     <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="200">
                         <div class="image-section">
                             <div class="main-image">
-                                <img src="assets/img/construction/project-4.webp" alt="Construction project showcase"
+                                <img src="{{ asset('assets/img/about.jpg') }}" alt="Construction project showcase"
                                     class="img-fluid">
                             </div>
                         </div>
@@ -72,6 +48,107 @@
             </div>
 
         </section><!-- /About Section -->
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="certifications section light-background">
+
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Certified &amp; Trusted</h2>
+                <p>We are fully certified and trusted in our industry.</p>
+            </div><!-- End Section Title -->
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="row gy-5 mt-4">
+
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="certification-item">
+                            <div class="certification-badge">
+                                <img src="assets/img/construction/badge-1.webp" alt="ISO 9001 Certification"
+                                    class="img-fluid">
+                            </div>
+                            <h4>ISO 9001</h4>
+                            <p>Quality Management System certification ensuring consistent service delivery and
+                                continuous improvement processes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="certification-item">
+                            <div class="certification-badge">
+                                <img src="assets/img/construction/badge-2.webp" alt="OSHA Safety Certification"
+                                    class="img-fluid">
+                            </div>
+                            <h4>OSHA Certified</h4>
+                            <p>Occupational Safety and Health Administration certification demonstrating our commitment
+                                to workplace safety standards.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="certification-item">
+                            <div class="certification-badge">
+                                <img src="assets/img/construction/badge-3.webp" alt="Licensed Contractor"
+                                    class="img-fluid">
+                            </div>
+                            <h4>Licensed &amp; Insured</h4>
+                            <p>Fully licensed contractor with comprehensive insurance coverage protecting both our team
+                                and your investment.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="certification-item">
+                            <div class="certification-badge">
+                                <img src="assets/img/construction/badge-4.webp" alt="Environmental Certification"
+                                    class="img-fluid">
+                            </div>
+                            <h4>Green Building</h4>
+                            <p>Certified in sustainable construction practices and environmentally responsible building
+                                methodologies.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row mt-5" data-aos="fade-up" data-aos-delay="500">
+                    <div class="col-12">
+                        <div class="certification-stats">
+                            <div class="row text-center">
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="stat-item">
+                                        <h3>11+</h3>
+                                        <p>Years Licensed</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="stat-item">
+                                        <h3>100+</h3>
+                                        <p>Completed Projects</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="stat-item">
+                                        <h3>12+</h3>
+                                        <p>Industry Certifications</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6 mb-4">
+                                    <div class="stat-item">
+                                        <h3>98%</h3>
+                                        <p>Client Satisfaction</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- /Certifications Section -->
 
     </main>
 
