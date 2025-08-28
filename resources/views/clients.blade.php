@@ -1,9 +1,5 @@
 <x-app-layout title="Clients">
 
-    @push('styles')
-        <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
-    @endpush
-
     <main class="main">
 
         <x-page-title title="Our Clients" link-name="Clients">
@@ -131,9 +127,5 @@
 
     </main>
 
-
-    @push('scripts')
-        <script src="{{ asset('assets/js/header.js') }}"></script>
-    @endpush
 
 </x-app-layout>

@@ -1,8 +1,5 @@
 <x-app-layout title="Partners">
 
-    @push('styles')
-        <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
-    @endpush
 
     <main class="main">
 
@@ -11,13 +8,7 @@
             numquam molestias.
         </x-page-title>
 
-
-
     </main>
 
-
-    @push('scripts')
-        <script src="{{ asset('assets/js/header.js') }}"></script>
-    @endpush
 
 </x-app-layout>

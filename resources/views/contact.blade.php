@@ -1,8 +1,5 @@
 <x-app-layout title="Contact Us">
 
-    @push('styles')
-        <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
-    @endpush
 
     <main class="main">
 
@@ -113,10 +110,5 @@
         </section><!-- /Contact Section -->
 
     </main>
-
-
-    @push('scripts')
-        <script src="{{ asset('assets/js/header.js') }}"></script>
-    @endpush
 
 </x-app-layout>
