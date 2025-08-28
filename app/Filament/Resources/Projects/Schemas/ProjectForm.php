@@ -22,6 +22,7 @@ class ProjectForm
                     ->required()
                     ->maxLength(100)
                     ->placeholder('Enter project title')
+                    ->helperText('This shows in the project list')
                     ->live(onBlur: true)
                     ->afterStateUpdated(function ($state, callable $set) {
                         $set('slug', Str::slug($state));
@@ -70,11 +71,12 @@ class ProjectForm
 
                 DatePicker::make('start_date')
                     ->label('Start Date')
-                    ->required()
+                    ->helperText('Enter start date of project')
                     ->displayFormat('d/m/Y'),
 
                 DatePicker::make('end_date')
                     ->label('End Date')
+                    ->helperText('Enter end date of project')
                     ->displayFormat('d/m/Y')
                     ->after('start_date'),
 
@@ -91,13 +93,6 @@ class ProjectForm
                     ->directory('projects/featured')
                     ->disk('public'),
 
-                // FileUpload::make('gallery')
-                //     ->label('Project Gallery')
-                //     ->multiple()
-                //     ->image()
-                //     ->maxSize(2048)
-                //     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
-                //     ->directory('projects/gallery'),
             ]);
     }
 }
