@@ -2,11 +2,10 @@
 
 namespace App\Filament\Resources\Certifications\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\ImageColumn;
 
 class CertificationsTable
 {
@@ -15,11 +14,11 @@ class CertificationsTable
         return $table
             ->columns([
                 // Display image column
-                \Filament\Tables\Columns\ImageColumn::make('certificate_file')
-                    ->label('Image')
+                ImageColumn::make('certificate_file')
+                    ->label('Certificate Image')
                     ->circular()
-                    ->height(40)
-                    ->width(40)
+                    ->imageHeight(40)
+                    ->imageWidth(40)
                     ->disk('public'),
                 TextColumn::make('name')
                     ->searchable(),

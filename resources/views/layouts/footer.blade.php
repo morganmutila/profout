@@ -28,10 +28,10 @@
                         <div class="col-6 col-md-4">
                             <h5>Services</h5>
                             <ul class="list-unstyled w-100">
-                                <li><a href="{{ route('services.communication') }}">Communication</a></li>
-                                <li><a href="{{ route('services.energy') }}">Energy</a></li>
-                                <li><a href="{{ route('services.security') }}">Security Solutions</a></li>
-                                <li><a href="{{ route('services.construction') }}">Construction</a></li>
+                                @foreach ($navbarServices as $service)
+                                    <li><a href="{{ route('services.' . $service->slug) }}">{{ $service->title }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                         <div class="col-6 col-md-4">

@@ -42,17 +42,17 @@ Route::prefix('services')->group(function () {
         return view('services.index');
     })->name('services.index');
 
-    Route::get('/communication', function () {
+    Route::get('/network-and-communication', function () {
         return view('services.communication');
-    })->name('services.communication');
+    })->name('services.network-and-communication');
 
-    Route::get('/energy', function () {
+    Route::get('/power-and-energy', function () {
         return view('services.energy');
-    })->name('services.energy');
+    })->name('services.power-and-energy');
 
-    Route::get('/security', function () {
+    Route::get('/security-solutions', function () {
         return view('services.security');
-    })->name('services.security');
+    })->name('services.security-solutions');
 
     Route::get('/construction', function () {
         return view('services.construction');

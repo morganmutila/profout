@@ -14,13 +14,13 @@ class ServicesTable
     {
         return $table
             ->columns([
+                ImageColumn::make('image')
+                    ->label('Service Image')
+                    ->imageHeight(40)
+                    ->imageWidth(80)
+                    ->disk('public'),
                 TextColumn::make('title')
-                    ->searchable(),
-                TextColumn::make('short_description')
-                    ->searchable(),
-                TextColumn::make('icon')
-                    ->searchable(),
-                ImageColumn::make('image'),
+                    ->searchable(),                
                 TextColumn::make('order')
                     ->numeric()
                     ->sortable(),
@@ -32,9 +32,6 @@ class ServicesTable
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),

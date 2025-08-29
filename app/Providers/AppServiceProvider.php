@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Service;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use \Illuminate\Database\Eloquent\Model;
 
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+       
     }
 
     /**
@@ -26,5 +28,6 @@ class AppServiceProvider extends ServiceProvider
         DB::prohibitDestructiveCommands(!app()->isProduction());
         Model::unguard();
 
+        View::share('navbarServices', Service::all());  
     }
 }

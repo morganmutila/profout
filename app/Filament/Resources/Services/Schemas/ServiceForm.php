@@ -4,9 +4,11 @@ namespace App\Filament\Resources\Services\Schemas;
 
 use Str;
 use Filament\Schemas\Schema;
+use Filament\Schemas\Components\Grid;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 
 class ServiceForm
 {
@@ -14,7 +16,15 @@ class ServiceForm
     {
         return $schema
             ->components([
-
+                Grid::make()->schema([
+                FileUpload::make('image')
+                    ->image()
+                    ->required()
+                    ->maxSize(5024)
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
+                    ->directory('services')
+                    ->disk('public'),
+                ])->columnSpanFull(),
                 TextInput::make('title')
                     ->label('Service name')
                     ->required()
@@ -40,25 +50,32 @@ class ServiceForm
                     ->placeholder('service-url-slug')
                     ->helperText('URL-friendly version of the service name'),
 
-                TextInput::make('short_description')
-                    ->placeholder('Enter service short description'),
-                Textarea::make('description')
+                Textarea::make('short_description')
+                    ->placeholder('Enter service short description')
+                    ->columnSpanFull(),
+                    RichEditor::make('description')
+                    ->toolbarButtons([
+                        ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                        ['h2', 'h3', 'alignStart', 'alignCenter', 'alignEnd'],
+                        ['blockquote', 'codeBlock', 'bulletList', 'orderedList'],
+                        ['table', 'attachFiles'], // The `customBlocks` and `mergeTags` tools are also added here if those features are used.
+                        ['undo', 'redo'],
+                    ])                
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('attachments')
+                    ->fileAttachmentsVisibility('public')
                     ->placeholder('Enter service description')
                     ->columnSpanFull(),
                 TextInput::make('icon')
                     ->placeholder('Enter service icon'),
-                FileUpload::make('image')
-                    ->image()
-                    ->required()
-                    ->maxSize(1024)
-                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
-                    ->directory('services')
-                    ->disk('public'),
+                
                 TextInput::make('order')
                     ->required()
-                    ->numeric()
+                    ->integer() 
                     ->helperText('At what position does the service show')
-                    ->default(0),
+                    ->default(function () {
+                        return \App\Models\Service::max('order') + 1;
+                    }),
             ]);
     }
 }

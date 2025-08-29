@@ -15,7 +15,7 @@
 
                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="200">
                         <div class="content">
-                            <h2 class="section-heading mb-4">Our Journey</h2>
+                            <h2 class="section-heading fw-bold mb-4">Our Journey</h2>
                             <p class="lead-text mb-4">Professional Outcomes Ltd — simply PROFOUT — was founded in 2014
                                 in the vibrant Northmead suburb of Lusaka, Zambia.
                             </p>

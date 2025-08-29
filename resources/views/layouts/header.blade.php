@@ -12,8 +12,9 @@
                 <!-- Megamenu 2 -->
                 <li class="megamenu-2">
                     <a href="{{ route('services.index') }}"
-                        class="{{ request()->routeIs('services.*') ? 'active' : '' }}"><span>Services</span> <i
-                            class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        class="{{ request()->routeIs('services.*') ? 'active' : '' }}"><span>Services</span>
+                        <i class="bi bi-chevron-down toggle-dropdown"></i>
+                    </a>
 
                     <!-- Mobile Megamenu -->
                     <ul class="mobile-megamenu">
@@ -22,8 +23,8 @@
                         <li><a href="#">Customer Insights</a></li>
                         <li><a href="#">Market Research</a></li>
 
-                        <li class="dropdown"><a href="#"><span>Enterprise Software</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Enterprise Software</span> <i <i
+                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">CRM Solutions</a></li>
                                 <li><a href="#">ERP Systems</a></li>
@@ -34,8 +35,8 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a href="#"><span>Development Tools</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Development Tools</span> <i <i
+                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">Code Editors</a></li>
                                 <li><a href="#">Version Control</a></li>
@@ -46,8 +47,8 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a href="#"><span>Creative Suite</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Creative Suite</span> <i <i
+                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">Design Software</a></li>
                                 <li><a href="#">Video Editing</a></li>
@@ -58,8 +59,8 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a href="#"><span>Resources</span> <i
-                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <li class="dropdown"><a href="#"><span>Resources</span> <i <i
+                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
                             <ul>
                                 <li><a href="#">Documentation</a></li>
                                 <li><a href="#">Tutorials</a></li>
@@ -79,28 +80,21 @@
                                     <button class="nav-link active" id="2190-tab-1-tab" data-bs-toggle="tab"
                                         data-bs-target="#2190-tab-1" type="button" role="tab"
                                         aria-controls="2190-tab-1" aria-selected="true">
-                                        <span>Enterprise Software</span>
+                                        <span class="capitalized">Network and Communication</span>
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="2190-tab-2-tab" data-bs-toggle="tab"
                                         data-bs-target="#2190-tab-2" type="button" role="tab"
                                         aria-controls="2190-tab-2" aria-selected="false">
-                                        <span>Development Tools</span>
+                                        <span class="capitalized">Power and Energy</span>
                                     </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="2190-tab-3-tab" data-bs-toggle="tab"
                                         data-bs-target="#2190-tab-3" type="button" role="tab"
                                         aria-controls="2190-tab-3" aria-selected="false">
-                                        <span>Creative Suite</span>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2190-tab-4-tab" data-bs-toggle="tab"
-                                        data-bs-target="#2190-tab-4" type="button" role="tab"
-                                        aria-controls="2190-tab-4" aria-selected="false">
-                                        <span>Resources</span>
+                                        <span class="capitalized">Security Solutions</span>
                                     </button>
                                 </li>
                             </ul>
@@ -166,20 +160,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="featured-banner">
-                                    <div class="banner-content">
-                                        <img src="assets/img/misc/misc-7.webp" alt="Enterprise Solutions"
-                                            class="banner-image">
-                                        <div class="banner-info">
-                                            <h5>Enterprise Package</h5>
-                                            <p>Comprehensive business management solution with advanced features and
-                                                24/7 support.</p>
-                                            <a href="#" class="cta-btn">Get Started <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Development Tools Tab -->
@@ -241,19 +221,6 @@
                                     </div>
                                 </div>
 
-                                <div class="featured-banner">
-                                    <div class="banner-content">
-                                        <img src="assets/img/misc/misc-12.webp" alt="Development Tools"
-                                            class="banner-image">
-                                        <div class="banner-info">
-                                            <h5>Developer Suite</h5>
-                                            <p>Complete toolkit for modern development teams with integrated CI/CD
-                                                pipelines.</p>
-                                            <a href="#" class="cta-btn">Explore Tools <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Creative Suite Tab -->
@@ -311,20 +278,6 @@
                                                     <small>Advanced 3D design software</small>
                                                 </div>
                                             </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="featured-banner">
-                                    <div class="banner-content">
-                                        <img src="assets/img/misc/misc-5.webp" alt="Creative Suite"
-                                            class="banner-image">
-                                        <div class="banner-info">
-                                            <h5>Creative Pro</h5>
-                                            <p>Everything you need for creative projects, from concept to final
-                                                production.</p>
-                                            <a href="#" class="cta-btn">Start Creating <i
-                                                    class="bi bi-arrow-right"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -386,7 +339,8 @@
 
                 <li class="dropdown"><a
                         class="{{ request()->routeIs(['about', 'contact', 'certifications']) ? 'active' : '' }}"><span>Company</span>
-                        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                        <i class="bi bi-chevron-down toggle-dropdown"></i>
+                    </a>
                     <ul>
                         <li><a href="{{ route('about') }}"
                                 class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
