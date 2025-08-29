@@ -44,7 +44,7 @@
 }
 
 .dark-background {
-    --background-color: #060606;
+    --background-color: #050505;
     --default-color: #ffffff;
     --heading-color: #ffffff;
     --surface-color: #252525;
@@ -1467,7 +1467,7 @@ section,
 
 .hero .carousel {
     width: 100%;
-    min-height: 94vh;
+    min-height: 86vh;
     padding: 0;
     margin: 0;
     background-color: var(--background-color);
@@ -1544,25 +1544,6 @@ section,
     .hero #description {
         max-width: 60%;
     }
-}
-
-.hero .btn-get-started {
-    color: var(--contrast-color);
-    background: var(--accent-color);
-    font-family: var(--heading-font);
-    font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 1px;
-    display: inline-block;
-    padding: 8px 32px;
-    border-radius: 50px;
-    transition: 0.5s;
-    margin: 10px;
-    animation: fadeInUp 1s both 0.4s;
-}
-
-.hero .btn-get-started:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
 .hero .carousel-control-prev,

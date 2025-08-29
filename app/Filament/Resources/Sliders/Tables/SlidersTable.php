@@ -27,10 +27,6 @@ class SlidersTable
                     ->searchable()
                     ->sortable()
                     ->limit(30),
-                
-                TextColumn::make('sort_order')
-                    ->label('Sort Order')
-                    ->sortable(),
 
                 IconColumn::make('is_active')
                     ->label('Active')

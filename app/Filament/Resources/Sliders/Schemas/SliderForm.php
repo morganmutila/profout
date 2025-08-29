@@ -2,13 +2,13 @@
 
 namespace App\Filament\Resources\Sliders\Schemas;
 
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Toggle;
-use Filament\Forms\Components\ColorPicker;
-use Filament\Forms\Components\Select;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Toggle;
+use Filament\Schemas\Components\Grid;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\FileUpload;
 
 class SliderForm
 {
@@ -16,21 +16,7 @@ class SliderForm
     {
         return $schema
             ->components([
-                TextInput::make('title')
-                    ->required()
-                    ->maxLength(100)
-                    ->placeholder('Enter slider title'),
-                    
-                RichEditor::make('description')
-                    ->label('Slider Description')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'link',
-                    ])
-                    ->placeholder('Enter slider description')
-                    ->columnSpanFull(),
-                    
+
                 FileUpload::make('image')
                     ->label('Slider Image')
                     ->image()
@@ -43,27 +29,49 @@ class SliderForm
                     ->directory('sliders')
                     ->disk('public')
                     ->columnSpanFull(),
-                                       
-                    
-                Select::make('slider_type')
+
+                    Grid::make()->schema([
+                        TextInput::make('title')
+                            ->required()
+                            ->maxLength(100)
+                            ->placeholder('Enter slider title'),
+                        Select::make('slider_type')
                     ->label('Slider Type')
                     ->options([
                         'left_aligned' => 'Left',
                         'center_aligned' => 'Center',
-                    ])
-                    ->default('center_aligned'),
+                    ])->default('center_aligned')
+                    ->helperText('Where the text inside the Slider will be positioned'),
 
-                Toggle::make('is_active')
+                
+                    Toggle::make('is_active')
                     ->label('Active')
                     ->default(true)
+                    ->hiddenOn('create')
                     ->helperText('Enable or disable this slider'),
-                    
-                TextInput::make('sort_order')
+                    ])->columnSpanFull(),  
+
+                    TextInput::make('sort_order')
                     ->label('Sort Order')
                     ->numeric()
                     ->default(1)
+                    ->hidden()
                     ->unique()
-                    ->helperText('Lower numbers appear first'),
+                    ->helperText('Lower numbers appear first')
+                    ->default(function () {
+                        return (int) \App\Models\Slider::max('order') + 1;
+                    }),
+                    
+                Textarea::make('description')
+                    ->label('Slider Description')
+                    ->placeholder('Enter slider description')
+                    ->columnSpanFull(),                
+                
+                                       
+                    
+               
+
+                
             ]);
     }
 }
