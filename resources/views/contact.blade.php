@@ -55,44 +55,19 @@
                                 </div>
                                 <div class="contact-text">
                                     <h4>Open Hours</h4>
-                                    <p>Monday - Friday: 8HRS - 17HRS<br><span style="font-size:14px;">Excluding public
+                                    <p>Monday - Friday: 8HRS - 17HRS<br><span class="fs-6">Excluding public
                                             Holidays</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
+                        <div class="contact-form-container d-flex flex-column" data-aos="fade-up" data-aos-delay="400">
                             <h3>Get in Touch</h3>
                             <p>Send an email to contact Profout. Our dedicated team will reply to the email on any
                                 enquiries on the products and services.</p>
 
-                            <form action="forms/contact.php" method="post" class="php-email-form">
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <input type="text" name="name" class="form-control" id="name"
-                                            placeholder="Your Name" required="">
-                                    </div>
-                                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                                        <input type="email" class="form-control" name="email" id="email"
-                                            placeholder="Your Email" required="">
-                                    </div>
-                                </div>
-                                <div class="form-group mt-3">
-                                    <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="Subject" required="">
-                                </div>
-                                <div class="form-group mt-3">
-                                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
-                                </div>
-                                <div class="form-submit">
-                                    <button type="submit">Send Message</button>
-                                    <div class="social-links">
-                                        <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                                    </div>
-                                </div>
-                            </form>
+                            <livewire:client-contact-form />
                         </div>
                     </div>
                 </div>
