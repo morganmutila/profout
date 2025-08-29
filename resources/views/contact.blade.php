@@ -4,8 +4,8 @@
     <main class="main">
 
         <x-page-title title="Contact Us">
-            Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda
-            numquam molestias.
+            To contact us, please use the form or give us a call, send an email to contact Profout with the contact
+            details that are listed below.
         </x-page-title>
 
         <!-- Contact Section -->
@@ -14,10 +14,7 @@
             <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <div class="contact-main-wrapper">
                     <div class="map-wrapper">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        {!! $settingsGlobal->map_location !!}
                     </div>
 
                     <div class="contact-content">
@@ -28,7 +25,7 @@
                                 </div>
                                 <div class="contact-text">
                                     <h4>Location</h4>
-                                    <p>8721 Broadway Avenue, New York, NY 10023</p>
+                                    <p>{{ $settingsGlobal->address }}</p>
                                 </div>
                             </div>
 
@@ -38,7 +35,7 @@
                                 </div>
                                 <div class="contact-text">
                                     <h4>Email</h4>
-                                    <p>info@examplecompany.com</p>
+                                    <p>{{ $settingsGlobal->email }}</p>
                                 </div>
                             </div>
 
@@ -48,7 +45,7 @@
                                 </div>
                                 <div class="contact-text">
                                     <h4>Call</h4>
-                                    <p>+1 (212) 555-7890</p>
+                                    <p>{{ $settingsGlobal->phone }}</p>
                                 </div>
                             </div>
 
@@ -58,15 +55,17 @@
                                 </div>
                                 <div class="contact-text">
                                     <h4>Open Hours</h4>
-                                    <p>Monday-Friday: 9AM - 6PM</p>
+                                    <p>Monday - Friday: 8HRS - 17HRS<br><span style="font-size:14px;">Excluding public
+                                            Holidays</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="contact-form-container" data-aos="fade-up" data-aos-delay="400">
                             <h3>Get in Touch</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua consectetur adipiscing.</p>
+                            <p>Send an email to contact Profout. Our dedicated team will reply to the email on any
+                                enquiries on the products and services.</p>
 
                             <form action="forms/contact.php" method="post" class="php-email-form">
                                 <div class="row">
@@ -86,19 +85,10 @@
                                 <div class="form-group mt-3">
                                     <textarea class="form-control" name="message" rows="5" placeholder="Message" required=""></textarea>
                                 </div>
-
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                                </div>
-
                                 <div class="form-submit">
                                     <button type="submit">Send Message</button>
                                     <div class="social-links">
-                                        <a href="#"><i class="bi bi-twitter"></i></a>
                                         <a href="#"><i class="bi bi-facebook"></i></a>
-                                        <a href="#"><i class="bi bi-instagram"></i></a>
                                         <a href="#"><i class="bi bi-linkedin"></i></a>
                                     </div>
                                 </div>

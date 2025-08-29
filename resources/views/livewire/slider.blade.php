@@ -27,7 +27,6 @@
         </a>
 
         <ol class="carousel-indicators"></ol>
-
     </div>
 
 </section><!-- /Hero Section -->

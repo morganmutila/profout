@@ -3,7 +3,8 @@
     <main class="main">
 
         <x-page-title title="About">
-            Our Business Background
+            We are a company specialized in Information and Communication Technology Infrastructure building and
+            Equipment supply.
         </x-page-title>
 
         <!-- About Section -->

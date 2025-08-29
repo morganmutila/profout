@@ -20,7 +20,7 @@ class SiteSettingResource extends Resource
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-wrench';
 
-    protected static ?string $recordTitleAttribute = 'Sitesetting';
+    protected static ?string $recordTitleAttribute = 'address';
 
     public static function canCreate(): bool
     {

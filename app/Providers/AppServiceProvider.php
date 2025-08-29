@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Service;
+use App\Models\SiteSetting;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -29,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
 
         View::share('navbarServices', Service::all());  
+        View::share('settingsGlobal', SiteSetting::first());  
     }
 }
