@@ -494,7 +494,7 @@ h6 {
     }
 
     .navmenu .megamenu-2 .tab-navigation {
-        width: 290px;
+        width: 350px;
         background-color: color-mix(
             in srgb,
             var(--accent-color),

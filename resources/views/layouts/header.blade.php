@@ -18,316 +18,85 @@
 
                     <!-- Mobile Megamenu -->
                     <ul class="mobile-megamenu">
+                        @foreach ($navbarServices as $service)
+                            <li><a href="{{ route('services.' . $service->slug) }}">{{ $service->title }}</a></li>
+                        @endforeach
 
-                        <li><a href="#">Product Analytics</a></li>
-                        <li><a href="#">Customer Insights</a></li>
-                        <li><a href="#">Market Research</a></li>
-
-                        <li class="dropdown"><a href="#"><span>Enterprise Software</span> <i <i
-                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">CRM Solutions</a></li>
-                                <li><a href="#">ERP Systems</a></li>
-                                <li><a href="#">Workflow Automation</a></li>
-                                <li><a href="#">Document Management</a></li>
-                                <li><a href="#">Business Intelligence</a></li>
-                                <li><a href="#">Integration Platform</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>Development Tools</span> <i <i
-                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Code Editors</a></li>
-                                <li><a href="#">Version Control</a></li>
-                                <li><a href="#">Testing Frameworks</a></li>
-                                <li><a href="#">Deployment Tools</a></li>
-                                <li><a href="#">API Management</a></li>
-                                <li><a href="#">Performance Monitoring</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>Creative Suite</span> <i <i
-                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Design Software</a></li>
-                                <li><a href="#">Video Editing</a></li>
-                                <li><a href="#">Audio Production</a></li>
-                                <li><a href="#">Animation Tools</a></li>
-                                <li><a href="#">Photo Editing</a></li>
-                                <li><a href="#">3D Modeling</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown"><a href="#"><span>Resources</span> <i <i
-                                    class="bi bi-caret-down-fill toggle-dropdown"></i></a>
-                            <ul>
-                                <li><a href="#">Documentation</a></li>
-                                <li><a href="#">Tutorials</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Blog Posts</a></li>
-                            </ul>
-                        </li>
-
+                        @foreach ($serviceCategories ?? [] as $category)
+                            <li class="dropdown">
+                                <a href="#"><span>{{ $category->name }}</span> <i
+                                        class="bi bi-caret-down-fill toggle-dropdown"></i></a>
+                                <ul>
+                                    @foreach ($category->services as $service)
+                                        <li><a
+                                                href="{{ route('services.' . $service->slug) }}">{{ $service->title }}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @endforeach
                     </ul><!-- End Mobile Megamenu -->
 
                     <!-- Desktop Megamenu -->
                     <div class="desktop-megamenu">
-
                         <div class="tab-navigation">
-                            <ul class="nav nav-tabs flex-column" id="2190-megamenu-tabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="2190-tab-1-tab" data-bs-toggle="tab"
-                                        data-bs-target="#2190-tab-1" type="button" role="tab"
-                                        aria-controls="2190-tab-1" aria-selected="true">
-                                        <span class="capitalized">Network and Communication</span>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2190-tab-2-tab" data-bs-toggle="tab"
-                                        data-bs-target="#2190-tab-2" type="button" role="tab"
-                                        aria-controls="2190-tab-2" aria-selected="false">
-                                        <span class="capitalized">Power and Energy</span>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="2190-tab-3-tab" data-bs-toggle="tab"
-                                        data-bs-target="#2190-tab-3" type="button" role="tab"
-                                        aria-controls="2190-tab-3" aria-selected="false">
-                                        <span class="capitalized">Security Solutions</span>
-                                    </button>
-                                </li>
+                            <ul class="nav nav-tabs flex-column" id="megamenu-tabs" role="tablist">
+                                @foreach ($navbarServices as $index => $service)
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link {{ $index === 0 ? 'active' : '' }}"
+                                            id="tab-{{ $service->id }}-tab" data-bs-toggle="tab"
+                                            data-bs-target="#tab-{{ $service->id }}" type="button" role="tab"
+                                            aria-controls="tab-{{ $service->id }}"
+                                            aria-selected="{{ $index === 0 ? 'true' : 'false' }}">
+                                            {!! $service->icon !!}
+                                            <span class="capitalized">{{ $service->title }}</span>
+                                        </button>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
 
                         <div class="tab-content">
+                            @foreach ($navbarServices as $index => $service)
+                                <div class="tab-pane fade {{ $index === 0 ? 'show active' : '' }}"
+                                    id="tab-{{ $service->id }}" role="tabpanel"
+                                    aria-labelledby="tab-{{ $service->id }}-tab">
+                                    <div class="content-grid">
+                                        @foreach ($service->sections ?? [] as $section)
+                                            <div class="product-section">
+                                                <h4>{{ $section->title }}</h4>
+                                                <div class="product-list">
+                                                    @foreach ($section->items as $item)
+                                                        <a href="{{ $item->url }}" class="product-link">
+                                                            <i class="bi {{ $item->icon }}"></i>
+                                                            <div>
+                                                                <span>{{ $item->title }}</span>
+                                                                <small>{{ $item->description }}</small>
+                                                            </div>
+                                                        </a>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+                                        @endforeach
 
-                            <!-- Enterprise Software Tab -->
-                            <div class="tab-pane fade show active" id="2190-tab-1" role="tabpanel"
-                                aria-labelledby="2190-tab-1-tab">
-                                <div class="content-grid">
-                                    <div class="product-section">
-                                        <h4>Core Solutions</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-people"></i>
-                                                <div>
-                                                    <span>CRM Solutions</span>
-                                                    <small>Manage customer relationships effectively</small>
+                                        @if (!count($service->sections ?? []))
+                                            <div class="product-section">
+                                                <h4>{{ $service->title }} Services</h4>
+                                                <div class="product-list">
+                                                    <a href="{{ route('services.' . $service->slug) }}"
+                                                        class="product-link">
+                                                        <div>
+                                                            <span>{{ $service->title }}</span>
+                                                        </div>
+                                                    </a>
                                                 </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-diagram-3"></i>
-                                                <div>
-                                                    <span>ERP Systems</span>
-                                                    <small>Integrate all business processes</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-gear-wide"></i>
-                                                <div>
-                                                    <span>Workflow Automation</span>
-                                                    <small>Streamline repetitive tasks</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-section">
-                                        <h4>Data &amp; Analytics</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-file-earmark-text"></i>
-                                                <div>
-                                                    <span>Document Management</span>
-                                                    <small>Organize and secure documents</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-bar-chart"></i>
-                                                <div>
-                                                    <span>Business Intelligence</span>
-                                                    <small>Make data-driven decisions</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-share"></i>
-                                                <div>
-                                                    <span>Integration Platform</span>
-                                                    <small>Connect all your systems</small>
-                                                </div>
-                                            </a>
-                                        </div>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Development Tools Tab -->
-                            <div class="tab-pane fade" id="2190-tab-2" role="tabpanel"
-                                aria-labelledby="2190-tab-2-tab">
-                                <div class="content-grid">
-                                    <div class="product-section">
-                                        <h4>Code &amp; Build</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-code-square"></i>
-                                                <div>
-                                                    <span>Code Editors</span>
-                                                    <small>Advanced development environment</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-git"></i>
-                                                <div>
-                                                    <span>Version Control</span>
-                                                    <small>Track changes and collaborate</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-check2-square"></i>
-                                                <div>
-                                                    <span>Testing Frameworks</span>
-                                                    <small>Ensure code quality</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-section">
-                                        <h4>Deploy &amp; Monitor</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-cloud-upload"></i>
-                                                <div>
-                                                    <span>Deployment Tools</span>
-                                                    <small>Seamless application deployment</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-api"></i>
-                                                <div>
-                                                    <span>API Management</span>
-                                                    <small>Design and manage APIs</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-speedometer2"></i>
-                                                <div>
-                                                    <span>Performance Monitoring</span>
-                                                    <small>Track application performance</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <!-- Creative Suite Tab -->
-                            <div class="tab-pane fade" id="2190-tab-3" role="tabpanel"
-                                aria-labelledby="2190-tab-3-tab">
-                                <div class="content-grid">
-                                    <div class="product-section">
-                                        <h4>Design &amp; Visual</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-brush"></i>
-                                                <div>
-                                                    <span>Design Software</span>
-                                                    <small>Professional graphic design tools</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-camera-video"></i>
-                                                <div>
-                                                    <span>Video Editing</span>
-                                                    <small>Professional video production</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-image"></i>
-                                                <div>
-                                                    <span>Photo Editing</span>
-                                                    <small>Advanced image manipulation</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-section">
-                                        <h4>Media Production</h4>
-                                        <div class="product-list">
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-music-note"></i>
-                                                <div>
-                                                    <span>Audio Production</span>
-                                                    <small>Professional audio editing</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-play-circle"></i>
-                                                <div>
-                                                    <span>Animation Tools</span>
-                                                    <small>Create stunning animations</small>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="product-link">
-                                                <i class="bi bi-box"></i>
-                                                <div>
-                                                    <span>3D Modeling</span>
-                                                    <small>Advanced 3D design software</small>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Resources Tab -->
-                            <div class="tab-pane fade" id="2190-tab-4" role="tabpanel"
-                                aria-labelledby="2190-tab-4-tab">
-                                <div class="resources-layout">
-                                    <div class="resource-categories">
-                                        <div class="resource-category">
-                                            <i class="bi bi-book"></i>
-                                            <h5>Documentation</h5>
-                                            <p>Comprehensive guides and API references for all our products and
-                                                services.</p>
-                                            <a href="#" class="resource-link">Browse Docs <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                        <div class="resource-category">
-                                            <i class="bi bi-play-circle"></i>
-                                            <h5>Video Tutorials</h5>
-                                            <p>Step-by-step video guides to help you get the most out of our solutions.
-                                            </p>
-                                            <a href="#" class="resource-link">Watch Tutorials <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                        <div class="resource-category">
-                                            <i class="bi bi-chat-square-dots"></i>
-                                            <h5>Community Forum</h5>
-                                            <p>Connect with other users, share tips, and get answers to your questions.
-                                            </p>
-                                            <a href="#" class="resource-link">Join Community <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                        <div class="resource-category">
-                                            <i class="bi bi-newspaper"></i>
-                                            <h5>Blog &amp; Articles</h5>
-                                            <p>Latest insights, best practices, and industry trends from our experts.
-                                            </p>
-                                            <a href="#" class="resource-link">Read Blog <i
-                                                    class="bi bi-arrow-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
-
                     </div><!-- End Desktop Megamenu -->
-
                 </li><!-- End Megamenu 2 -->
 
                 <li><a href="{{ route('projects') }}"
@@ -342,15 +111,21 @@
                         <i class="bi bi-chevron-down toggle-dropdown"></i>
                     </a>
                     <ul>
-                        <li><a href="{{ route('about') }}"
-                                class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
+                        @foreach ($companyPages ?? [] as $page)
+                            <li><a href="{{ route($page->route) }}"
+                                    class="{{ request()->routeIs($page->route) ? 'active' : '' }}">{{ $page->title }}</a>
+                            </li>
+                        @endforeach
 
-
-                        <li><a href="{{ route('certifications') }}"
-                                class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a>
-                        </li>
-                        <li><a href="{{ route('contact') }}"
-                                class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
+                        @if (empty($companyPages))
+                            <li><a href="{{ route('about') }}"
+                                    class="{{ request()->routeIs('about') ? 'active' : '' }}">About Profout</a></li>
+                            <li><a href="{{ route('certifications') }}"
+                                    class="{{ request()->routeIs('certifications') ? 'active' : '' }}">Certifications</a>
+                            </li>
+                            <li><a href="{{ route('contact') }}"
+                                    class="{{ request()->routeIs('contact') ? 'active' : '' }}">Contact Us</a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>
