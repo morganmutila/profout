@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\ClientContactForm as ClientContact;
+use App\Models\ClientEmail;
 use Livewire\Attributes\Validate;
 
 class ClientContactForm extends Component
@@ -23,7 +23,7 @@ class ClientContactForm extends Component
     public function submitForm(): void
     {
         // Handle form submission logic here
-        ClientContact::create($this->validate());
+        ClientEmail::create($this->validate());
 
         // Reset form fields after submission
         $this->reset();

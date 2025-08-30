@@ -3,19 +3,14 @@
 namespace App\Filament\Resources\ClientEmails\Pages;
 
 use App\Filament\Resources\ClientEmails\ClientEmailResource;
-use Filament\Actions\DeleteAction;
-use Filament\Actions\ViewAction;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditClientEmail extends EditRecord
+class ViewClientEmail extends ViewRecord
 {
     protected static string $resource = ClientEmailResource::class;
 
     protected function getHeaderActions(): array
     {
-        return [
-            ViewAction::make(),
-            DeleteAction::make(),
-        ];
+        return [];
     }
 }
