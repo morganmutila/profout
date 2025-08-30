@@ -1352,10 +1352,6 @@ h6 {
     position: relative;
 }
 
-.page-breadcrumb {
-    padding: 25px 0 25px 0 !important;
-}
-
 .page-title:before {
     content: "";
     background-color: color-mix(
@@ -1401,9 +1397,15 @@ h6 {
     content: "›";
     display: inline-block;
     padding-right: 10px;
-    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
+@media (min-width: 1024px) {
+    .page-title .breadcrumbs {
+        position: absolute;
+        top: -65%;
+    }
+}
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -3261,14 +3263,13 @@ section,
 .clients .clients-slide {
     flex: 0 0 auto;
     width: 200px;
-    height: 100px;
+    height: 150px;
     margin: 0 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--surface-color);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -3299,16 +3300,9 @@ section,
     left: 100%;
 }
 
-.clients .clients-slide:hover img {
-    filter: none;
-    opacity: 1;
-}
-
 .clients .clients-slide img {
-    max-width: 80%;
-    max-height: 60%;
-    filter: grayscale(100%);
-    opacity: 0.7;
+    max-width: 90%;
+    max-height: 90%;
     transition: all 0.3s ease;
 }
 

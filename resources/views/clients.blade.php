@@ -13,111 +13,37 @@
 
                 <div class="clients-slider">
                     <div class="clients-track track-1" data-aos="fade-right" data-aos-delay="200">
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
-                        </div>
-
+                        @foreach ($clients as $client)
+                            <div class="clients-slide">
+                                <img src="{{ asset('storage/' . $client->logo) }}" class="img-fluid"
+                                    alt="{{ $client->name }}">
+                            </div>
+                        @endforeach
                         <!-- Duplicate for seamless looping -->
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
-                        </div>
+                        @foreach ($clients as $client)
+                            <div class="clients-slide">
+                                <img src="{{ asset('storage/' . $client->logo) }}" class="img-fluid"
+                                    alt="{{ $client->name }}">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
                 <div class="clients-slider">
                     <div class="clients-track track-2" data-aos="fade-left" data-aos-delay="300">
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
-                        </div>
-
+                        @foreach ($clients->reverse() as $client)
+                            <div class="clients-slide">
+                                <img src="{{ asset('storage/' . $client->logo) }}" class="img-fluid"
+                                    alt="{{ $client->name }}">
+                            </div>
+                        @endforeach
                         <!-- Duplicate for seamless looping -->
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-8.webp" class="img-fluid" alt="Client 8">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-7.webp" class="img-fluid" alt="Client 7">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-6.webp" class="img-fluid" alt="Client 6">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-5.webp" class="img-fluid" alt="Client 5">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-4.webp" class="img-fluid" alt="Client 4">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-3.webp" class="img-fluid" alt="Client 3">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-2.webp" class="img-fluid" alt="Client 2">
-                        </div>
-                        <div class="clients-slide">
-                            <img src="assets/img/clients/clients-1.webp" class="img-fluid" alt="Client 1">
-                        </div>
+                        @foreach ($clients->reverse() as $client)
+                            <div class="clients-slide">
+                                <img src="{{ asset('storage/' . $client->logo) }}" class="img-fluid"
+                                    alt="{{ $client->name }}">
+                            </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -126,6 +52,5 @@
         </section><!-- /Clients Section -->
 
     </main>
-
 
 </x-app-layout>

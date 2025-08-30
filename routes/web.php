@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ProjectController;
 
 
@@ -24,9 +25,7 @@ Route::get('/partners', function () {
     return view('partners');
 })->name('partners');
 
-Route::get('/clients', function () {
-    return view('clients');
-})->name('clients');
+Route::get('/clients', [ClientController::class, '__invoke'])->name('clients');
 
 
 // About Company Routes

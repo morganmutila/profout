@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use \Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,7 +30,27 @@ class AppServiceProvider extends ServiceProvider
         DB::prohibitDestructiveCommands(!app()->isProduction());
         Model::unguard();
 
-        View::share('navbarServices', Service::all());  
-        View::share('settingsGlobal', SiteSetting::first());  
+        // Cache the queries
+        View::share('navbarServices', Cache::rememberForever('navbar_services', function () {
+            return Service::all();
+        }));  
+        View::share('settingsGlobal', Cache::rememberForever('settings_global', function () {
+            return SiteSetting::first();
+        }));
+
+        // Clear cache when models are updated
+        Service::saved(function () {
+            Cache::forget('navbar_services');
+        });
+        Service::deleted(function () {
+            Cache::forget('navbar_services');
+        });
+
+        SiteSetting::saved(function () {
+            Cache::forget('settings_global');
+        });
+        SiteSetting::deleted(function () {
+            Cache::forget('settings_global');
+        });
     }
 }

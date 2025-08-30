@@ -2,9 +2,8 @@
 
 namespace App\Filament\Resources\Clients\Tables;
 
-use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -14,18 +13,14 @@ class ClientsTable
     {
         return $table
             ->columns([
+                ImageColumn::make('logo')
+                    ->label('Client Logo')
+                    ->imageHeight(80)
+                    ->imageWidth(120)
+                    ->disk('public'),
                 TextColumn::make('name')
                     ->searchable(),
-                TextColumn::make('logo')
-                    ->searchable(),
-                TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                
             ])
             ->filters([
                 //
